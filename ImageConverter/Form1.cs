@@ -82,10 +82,21 @@ namespace ImageConverter
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            if (!Directory.Exists(outputpath.Text)) return;
-
+            if (!Directory.Exists(outputpath.Text))
+            {
+                MessageBox.Show("Invalide output path!", "Error", MessageBoxButtons.OK);
+                return;
+            }
             SecondThreadConcern.Stop = false;
-            button2.Enabled = true ;
+
+            cancelButton.Enabled = true ;
+            convertbutton.Enabled = false;
+            addbutton.Enabled = false;
+            browsebutton.Enabled = false;
+            groupBox2.Enabled = false;
+            groupBox1.Enabled = false;
+            FileDataGrid.Enabled = false;
+            removebutton.Enabled = false;
 
             progressBar.Maximum = FileDataGrid.Rows.Count;
             progressBar.CustomText = $"{0} / {progressBar.Maximum} (0%)";
@@ -103,7 +114,7 @@ namespace ImageConverter
             var progress = new Progress<int>(s =>
             {
                 progressBar.Value = s;
-                progressBar.CustomText = $"{s}/{progressBar.Maximum} ({(int)((float)s / progressBar.Maximum * 100)} %";
+                progressBar.CustomText = $"{s}/{progressBar.Maximum} ({(int)((float)s / progressBar.Maximum * 100)}%)";
             });
 
             await Task.Factory.StartNew(() => SecondThreadConcern.LongWork(progress, selectedOutput: selectedOutput, webpq: webpq, outpath: outpath, rows: FileDataGrid.Rows),
@@ -125,8 +136,17 @@ namespace ImageConverter
             }
 
             //reset ui elements
-            button2.Enabled = false;
+            cancelButton.Enabled = false;
+            convertbutton.Enabled = true;
+            addbutton.Enabled = true;
+            browsebutton.Enabled = true;
+            groupBox2.Enabled = true;
+            groupBox1.Enabled = true;
+            FileDataGrid.Enabled = true;
+            removebutton.Enabled = true;
+
             progressBar.Value = 0;
+
             progressBar.CustomText = "Waiting";
         }
 

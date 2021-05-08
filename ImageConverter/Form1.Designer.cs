@@ -49,7 +49,7 @@ namespace ImageConverter
             this.outputpath = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.openFolder = new System.Windows.Forms.CheckBox();
-            this.Browse = new System.Windows.Forms.Button();
+            this.browsebutton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.webpquality = new System.Windows.Forms.ComboBox();
@@ -59,7 +59,7 @@ namespace ImageConverter
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
+            this.convertbutton = new System.Windows.Forms.Button();
             this.FileDataGrid = new System.Windows.Forms.DataGridView();
             this.FileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Extension = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,7 +71,7 @@ namespace ImageConverter
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.filecount = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -109,7 +109,7 @@ namespace ImageConverter
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.openFolder);
-            this.groupBox1.Controls.Add(this.Browse);
+            this.groupBox1.Controls.Add(this.browsebutton);
             this.groupBox1.Controls.Add(this.outputpath);
             this.groupBox1.Location = new System.Drawing.Point(12, 304);
             this.groupBox1.Name = "groupBox1";
@@ -128,15 +128,15 @@ namespace ImageConverter
             this.openFolder.Text = "Open folder when finished";
             this.openFolder.UseVisualStyleBackColor = true;
             // 
-            // Browse
+            // browsebutton
             // 
-            this.Browse.Location = new System.Drawing.Point(284, 21);
-            this.Browse.Name = "Browse";
-            this.Browse.Size = new System.Drawing.Size(75, 23);
-            this.Browse.TabIndex = 4;
-            this.Browse.Text = "Browse";
-            this.Browse.UseVisualStyleBackColor = true;
-            this.Browse.Click += new System.EventHandler(this.Browse_Click);
+            this.browsebutton.Location = new System.Drawing.Point(284, 21);
+            this.browsebutton.Name = "browsebutton";
+            this.browsebutton.Size = new System.Drawing.Size(75, 23);
+            this.browsebutton.TabIndex = 4;
+            this.browsebutton.Text = "Browse";
+            this.browsebutton.UseVisualStyleBackColor = true;
+            this.browsebutton.Click += new System.EventHandler(this.Browse_Click);
             // 
             // groupBox2
             // 
@@ -248,15 +248,15 @@ namespace ImageConverter
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
-            // button1
+            // convertbutton
             // 
-            this.button1.Location = new System.Drawing.Point(12, 504);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(370, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Convert";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.convertbutton.Location = new System.Drawing.Point(12, 504);
+            this.convertbutton.Name = "convertbutton";
+            this.convertbutton.Size = new System.Drawing.Size(370, 23);
+            this.convertbutton.TabIndex = 6;
+            this.convertbutton.Text = "Convert";
+            this.convertbutton.UseVisualStyleBackColor = true;
+            this.convertbutton.Click += new System.EventHandler(this.button1_Click);
             // 
             // FileDataGrid
             // 
@@ -365,16 +365,16 @@ namespace ImageConverter
             this.aboutToolStripMenuItem.Text = "&About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutClicked);
             // 
-            // button2
+            // cancelButton
             // 
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(307, 533);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.cancelButton.Enabled = false;
+            this.cancelButton.Location = new System.Drawing.Point(307, 533);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 5;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // filecount
             // 
@@ -391,11 +391,11 @@ namespace ImageConverter
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(391, 563);
             this.Controls.Add(this.filecount);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.FileDataGrid);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.convertbutton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.addbutton);
@@ -427,9 +427,9 @@ namespace ImageConverter
         private System.Windows.Forms.Button addbutton;
         private System.Windows.Forms.TextBox outputpath;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button Browse;
+        private System.Windows.Forms.Button browsebutton;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button convertbutton;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.DataGridView FileDataGrid;
@@ -449,7 +449,7 @@ namespace ImageConverter
         private ToolStripMenuItem aboutToolStripMenuItem;
         private Label label1;
         private ComboBox webpquality;
-        private Button button2;
+        private Button cancelButton;
         private CheckBox openFolder;
         private Label filecount;
     }
